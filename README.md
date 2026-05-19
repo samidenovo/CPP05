@@ -64,6 +64,5 @@ To rebuild the project:
 - [cppreference - Inheritance](https://en.cppreference.com/w/cpp/language/derived_class)
 - [cppreference - Abstract classes](https://en.cppreference.com/w/cpp/language/abstract_class)
 - [cppreference - Operator overloading](https://en.cppreference.com/w/cpp/language/operators)
-- [42 C++ Module 05 subject](./subject.pdf)
 
 AI was used only as a support tool to help draft and improve the wording of this README, especially the project description and structure. The implementation, debugging, and understanding of the C++ concepts were done manually as part of the learning process.

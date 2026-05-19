@@ -11,15 +11,15 @@ class   Form
 {
     public:
         Form();
-        Form(const std::string name, int signIt, int execIt);
+        Form(const std::string name, int signGrade, int execGrade);
         Form(const Form &other);
-        Form    operator=(Form &other);
+        Form    &operator=(const Form &other);
         ~Form();
 
         const std::string   &getName() const;
-        std::string         getIsSigned() const;
-        const int           getSignIt() const;
-        const int           getExecIt() const;
+        bool                getIsSigned() const;
+        int                 getSignGrade() const;
+        int                 getExecGrade() const;
 
         void                beSigned(const Bureaucrat &bureau);
 
@@ -36,10 +36,10 @@ class   Form
     private:
         const std::string   _name;
         bool                _isSigned;
-        const int           _signIt;
-        const int           _execIt;
+        const int           _signGrade;
+        const int           _execGrade;
 };
 
-std::ostream    &operator<<(std::ostream &o, Form &form);
+std::ostream    &operator<<(std::ostream &o, const Form &form);
 
 #endif

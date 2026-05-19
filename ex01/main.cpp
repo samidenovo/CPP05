@@ -1,63 +1,51 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
+    std::cout << "========================" << std::endl;
+    std::cout << "===== Signing Form =====" << std::endl;
     try
     {
-        Bureaucrat a("Jao", 3);
+        Bureaucrat  high("Zuzu", 1);
+        Bureaucrat  low("Mama", 150);
+        Form        aForm("A Form", 50, 25);
 
-        std::cout << "Bureaucrat 'a' created\n" << a << std::endl;
-        while (true)
-        {
-            a.incrementGrade();
-            std::cout << "Bureaucrat 'a' incremented\n" << a << std::endl;
-        }
+        std::cout << high << std::endl;
+        std::cout << low << std::endl;
+        std::cout << aForm << std::endl;
+
+        low.signForm(aForm);
+        std::cout << aForm << std::endl;
+
+        high.signForm(aForm);
+        std::cout << aForm << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << "Unable to increment 'a': " << e.what() << std::endl;
+        std::cout << "Error: " << e.what() << std::endl;
     }
 
+    std::cout << "========================" << std::endl;
+    std::cout << "==== Bad Grade Form ====" << std::endl;
     try
     {
-        Bureaucrat b;
-        Bureaucrat c("Zeh", 51);
-
-        std::cout << "Bureaucrat 'b' created\n" << b << std::endl;
-        std::cout << "Bureaucrat 'c' created\n" << c << std::endl;
-
-        c = b;
-        std::cout << "Bureaucrat 'c' after operator=\n" << c << std::endl;
-
-        while (true)
-        {
-            c.decrementGrade();
-            std::cout << "Bureaucrat 'c' decremented\n" << c << std::endl;
-        }
+        Form    tooHigh("Too High", 0, 50);
+        std::cout << tooHigh << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << "Unable to decrement 'c': " << e.what() << std::endl;
+        std::cout << "Unable to create form: " << e.what() << std::endl;
     }
 
     try
     {
-        Bureaucrat d("BadLow", 151);
-        std::cout << d << std::endl;
+        Form    tooLow("Too Low", 50, 151);
+        std::cout << tooLow << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << "Unable to create bureaucrat 'd': " << e.what() << std::endl;
-    }
-
-    try
-    {
-        Bureaucrat f("BadHigh", 0);
-        std::cout << f << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Unable to create bureaucrat 'f': " << e.what() << std::endl;
+        std::cout << "Unable to create form: " << e.what() << std::endl;
     }
 
     return (0);
