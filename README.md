@@ -6,7 +6,7 @@
 
 CPP05 is part of the C++ modules from the 42 curriculum.
 
-The goal of this project is to practice repetition and exception handling in C++98 through a bureaucratic system made of bureaucrats, forms, abstract forms, and an intern.
+The goal of this project is to practice repetition and exception handling in C++98 through a bureaucratic system made of bureaucrats, Forms, abstract Forms, and an intern.
 
 Across the exercises, the project introduces custom exceptions, grade validation, operator overloading, inheritance, abstract classes, polymorphism, and dynamic object creation.
 
@@ -14,8 +14,8 @@ The module is divided into four exercises:
 
 - `ex00`: implements the `Bureaucrat` class, including grade validation and custom exceptions.
 - `ex01`: introduces the `Form` class, which can be signed by a bureaucrat.
-- `ex02`: turns `Form` into the abstract base class `AForm` and adds concrete executable forms.
-- `ex03`: implements the `Intern` class, which creates forms dynamically from a form name and target.
+- `ex02`: turns `Form` into the abstract base class `AForm` and adds concrete executable Forms.
+- `ex03`: implements the `Intern` class, which creates Forms dynamically from a Form name and target.
 
 ## Instructions
 

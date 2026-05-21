@@ -35,7 +35,7 @@ int main()
     }
     catch (std::exception &e)
     {
-        std::cout << "Unable to create form: " << e.what() << std::endl;
+        std::cout << "Unable to create Form: " << e.what() << std::endl;
     }
 
     try
@@ -45,7 +45,7 @@ int main()
     }
     catch (std::exception &e)
     {
-        std::cout << "Unable to create form: " << e.what() << std::endl;
+        std::cout << "Unable to create Form: " << e.what() << std::endl;
     }
 
     return (0);
