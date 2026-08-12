@@ -1,41 +1,46 @@
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include <iostream>
+#include "Intern.hpp"
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 int main()
 {
-    try
+    Intern someRandomIntern;
+    Bureaucrat boss("Boss", 1);
+    Bureaucrat rookie("Rookie", 150);
+
+    AForm *f1 = someRandomIntern.makeForm("robotomy request", "Bender");
+    AForm *f2 = someRandomIntern.makeForm("shrubbery creation", "home");
+    AForm *f3 = someRandomIntern.makeForm("presidential pardon", "Arthur");
+    AForm *f4 = someRandomIntern.makeForm("not a form", "nobody"); // should fail
+
+    std::cout << std::endl << "---- signing & executing ----" << std::endl;
+
+    if (f1)
     {
-        Bureaucrat high("High", 1);
-        Bureaucrat mid("Mid", 50);
-        Bureaucrat low("Low", 150);
-
-        ShrubberyCreationForm shrub("home");
-        RobotomyRequestForm robot("C3PO");
-        PresidentialPardonForm pardon("Imennocent");
-
-        std::cout << "Initial forms:" << std::endl;
-        std::cout << shrub << std::endl;
-        std::cout << robot << std::endl;
-        std::cout << pardon << std::endl;
-
-        std::cout << "\nSigning attempts:" << std::endl;
-        low.signForm(shrub);   // fail
-        mid.signForm(shrub);   // success
-        high.signForm(robot);  // success
-        high.signForm(pardon); // success
-
-        std::cout << "\nExecution attempts:" << std::endl;
-        low.executeForm(shrub);   // fail grade too low
-        mid.executeForm(shrub);   // success writes file
-        high.executeForm(robot);  // success or report robotomy failure
-        high.executeForm(pardon); // success pardon message
+        boss.signForm(*f1);
+        boss.executeForm(*f1);
+        delete f1;
     }
-    catch (std::exception &e)
+
+    if (f2)
     {
-        std::cout << "Unhandled exception: " << e.what() << std::endl;
+        rookie.signForm(*f2); // likely fail
+        boss.signForm(*f2);
+        boss.executeForm(*f2);
+        delete f2;
+    }
+
+    if (f3)
+    {
+        boss.signForm(*f3);
+        boss.executeForm(*f3);
+        delete f3;
+    }
+
+    if (f4)
+    {
+        delete f4;
     }
 
     return 0;
