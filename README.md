@@ -17,6 +17,15 @@ The module is divided into four exercises:
 - `ex02`: turns `Form` into the abstract base class `AForm` and adds concrete executable Forms.
 - `ex03`: implements the `Intern` class, which creates Forms dynamically from a Form name and target.
 
+## Files to Submit
+
+Submit the following files for each exercise:
+
+- **ex00:** `Makefile`, `main.cpp`, `Bureaucrat.hpp` (or `Bureaucrat.h`), `Bureaucrat.cpp`
+- **ex01:** files from `ex00` + `Form.hpp` (or `Form.h`), `Form.cpp`
+- **ex02:** `Makefile`, `main.cpp`, `Bureaucrat.hpp`/`Bureaucrat.cpp`, `AForm.hpp`/`AForm.cpp`, `ShrubberyCreationForm.hpp`/`ShrubberyCreationForm.cpp`, `RobotomyRequestForm.hpp`/`RobotomyRequestForm.cpp`, `PresidentialPardonForm.hpp`/`PresidentialPardonForm.cpp`
+- **ex03:** files from `ex02` + `Intern.hpp` (or `Intern.h`), `Intern.cpp`
+
 ## Instructions
 
 Each exercise is located in its own directory:

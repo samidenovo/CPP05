@@ -14,7 +14,7 @@ int main()
     AForm *f3 = someRandomIntern.makeForm("presidential pardon", "Arthur");
     AForm *f4 = someRandomIntern.makeForm("not a form", "nobody"); // should fail
 
-    std::cout << std::endl << "---- signing & executing ----" << std::endl;
+    std::cout << std::endl << "Signing and executing" << std::endl;
 
     if (f1)
     {
